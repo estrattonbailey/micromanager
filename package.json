@@ -1,6 +1,6 @@
 {
   "name": "micromanager",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Route-managed client-side binding controller in ES6.",
   "main": "dist/micromanager.js",
   "jsnext:main": "index.js",

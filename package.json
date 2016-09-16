@@ -1,7 +1,7 @@
 {
   "name": "evx",
-  "version": "1.0.3",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Route-managed client-side binding controller in ES6.",
   "main": "dist/evx.js",
   "jsnext:main": "index.js",
   "scripts": {

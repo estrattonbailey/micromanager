@@ -80,5 +80,7 @@ console.log(evx.getCache())
 ## Dependencies
 - [delegate:](https://github.com/zenorocha/delegate) Lightweight event delegation. by [@zenorocha](https://github.com/zenorocha)
 
-* * *
-MIT
+## Related Projects 
+- [operator.js](https://github.com/estrattonbailey/operator.js) An AJAX + routing library that transforms a normal site into a Single Page Application (SPA). by [@estrattonbailey](https://github.com/estrattonbailey)
+
+MIT License - Would love to hear your thoughts! :)

@@ -8,6 +8,7 @@ npm i micromanager --save
 
 ## Usage
 ```javascript
+import router from 'some-router'
 import micromanager from 'micromanager'
 
 micromanager.on('click', '.js-selector', e => {
@@ -16,8 +17,8 @@ micromanager.on('click', '.js-selector', e => {
 
 events.add(instanceOfLibrary)
 
-myRouter.on('newRoute', route => {
-  events.drop(route)
+router.on('newRoute', route => {
+  micromanager.drop(route)
 })
 ```
 

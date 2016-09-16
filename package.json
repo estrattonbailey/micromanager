@@ -1,12 +1,12 @@
 {
-  "name": "evx",
+  "name": "micromanager",
   "version": "0.0.1",
   "description": "Route-managed client-side binding controller in ES6.",
-  "main": "dist/evx.js",
+  "main": "dist/micromanager.js",
   "jsnext:main": "index.js",
   "scripts": {
-    "build": "mkdir -p dist && browserify index.js --standalone evx > dist/evx.js",
-    "size": "bundle-size ./dist/evx.js",
+    "build": "mkdir -p dist && browserify index.js --standalone micromanager > dist/micromanager.js",
+    "size": "bundle-size ./dist/micromanager.js",
     "test": "ava test -v"
   },
   "browserify": {
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/estrattonbailey/evx.git"
+    "url": "git+ssh://git@github.com/estrattonbailey/micromanager.git"
   },
   "keywords": [
     "binding",
@@ -33,9 +33,9 @@
   "author": "estrattonbailey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/estrattonbailey/evx/issues"
+    "url": "https://github.com/estrattonbailey/micromanager/issues"
   },
-  "homepage": "https://github.com/estrattonbailey/evx#readme",
+  "homepage": "https://github.com/estrattonbailey/micromanager#readme",
   "devDependencies": {
     "ava": "^0.16.0",
     "babel-cli": "^6.14.0",

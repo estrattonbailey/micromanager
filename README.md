@@ -1,16 +1,16 @@
-# evx 
+# micromanager 
 Route-managed client-side binding controller in ES6. **1.1kb gzipped.**
 
 ## Install 
 ```javascript
-npm i evx --save
+npm i micromanager --save
 ```
 
 ## Usage
 ```javascript
-import evx from 'evx'
+import micromanager from 'micromanager'
 
-evx.on('click', '.js-selector', e => {
+micromanager.on('click', '.js-selector', e => {
   // do stuff
 })
 
@@ -21,13 +21,13 @@ myRouter.on('newRoute', route => {
 })
 ```
 
-Usage of `.on()` or `.add()` also returns the individual instance that was added to the evx cache.
+Usage of `.on()` or `.add()` also returns the individual instance that was added to the micromanager cache.
 ```javascript
 import flickity from 'flickity'
 
 const slider = new flickity('#slider')
 
-const sliderInstance = evx.add(slider)
+const sliderInstance = micromanager.add(slider)
 
 console.log(sliderInstance) // entire flickity object
 
@@ -41,26 +41,26 @@ sliderInstance.destroy()
 ### .on(event, selector, callback)
 Add an event listener using event delegation via [delegate](https://github.com/zenorocha/delegate). See that documentation for more information.
 ```javascript
-evx.on('click', '#selector', e => {
+micromanager.on('click', '#selector', e => {
   console.log(e.target) // vanilla
   console.log(e.delegateTarget) // #selector clicked on
 })
 ```
 
 ### .add(instance)
-Add an instance of an object to evx at the current route. Useful for libraries that manage their own event bidnings. This object should have a `destroy` method that removes it's listeners and clears the instance.
+Add an instance of an object to micromanager at the current route. Useful for libraries that manage their own event bidnings. This object should have a `destroy` method that removes it's listeners and clears the instance.
 ```javascript
 import flickity from 'flickity'
 
 const slider = new flickity('#slider')
 
-evx.add(slider)
+micromanager.add(slider)
 ```
 
 ### .getCache()
-Returns an object containing nested route objects, each with an array of bindings managed by evx.
+Returns an object containing nested route objects, each with an array of bindings managed by micromanager.
 ```javascript
-console.log(evx.getCache())
+console.log(micromanager.getCache())
 
 /*
 {

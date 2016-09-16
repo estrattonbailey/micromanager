@@ -24,7 +24,12 @@
     "type": "git",
     "url": "git+ssh://git@github.com/estrattonbailey/evx.git"
   },
-  "keywords": [],
+  "keywords": [
+    "binding",
+    "events",
+    "controller",
+    "routing"
+  ],
   "author": "estrattonbailey",
   "license": "MIT",
   "bugs": {

@@ -1,12 +1,12 @@
 {
-  "name": "regulate",
+  "name": "evx",
   "version": "1.0.3",
   "description": "",
-  "main": "dist/regulate.js",
+  "main": "dist/evx.js",
   "jsnext:main": "index.js",
   "scripts": {
-    "build": "mkdir -p dist && browserify index.js --standalone regulate > dist/regulate.js",
-    "size": "bundle-size ./dist/regulate.js",
+    "build": "mkdir -p dist && browserify index.js --standalone evx > dist/evx.js",
+    "size": "bundle-size ./dist/evx.js",
     "test": "ava test -v"
   },
   "browserify": {
@@ -22,15 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/estrattonbailey/regulate.git"
+    "url": "git+ssh://git@github.com/estrattonbailey/evx.git"
   },
   "keywords": [],
   "author": "estrattonbailey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/estrattonbailey/regulate/issues"
+    "url": "https://github.com/estrattonbailey/evx/issues"
   },
-  "homepage": "https://github.com/estrattonbailey/regulate#readme",
+  "homepage": "https://github.com/estrattonbailey/evx#readme",
   "devDependencies": {
     "ava": "^0.16.0",
     "babel-cli": "^6.14.0",

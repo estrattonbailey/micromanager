@@ -8,7 +8,7 @@ const cache = obj => {
   let p = window.location.pathname
   state.cache[p] = state.cache[p] || []
   state.cache[p].push(obj)
-  return obj
+  return obj.instance
 }
 
 const add = fn => cache({
@@ -21,7 +21,7 @@ const on = (event, selector, callback) => cache({
   instance: delegate(document, selector, event, callback)
 })
 
-const clear = path => {
+const drop = path => {
   state.cache[path].forEach(o => o.instance.destroy ? o.instance.destroy() : null)
   delete state.cache[path]
 }
@@ -29,6 +29,6 @@ const clear = path => {
 export default {
   on,
   add,
-  clear,
+  drop,
   getCache: () => state.cache
 } 

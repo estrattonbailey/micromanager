@@ -1,4 +1,4 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.regulate = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.evx = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17,11 +17,9 @@ var state = {
 
 var cache = function cache(obj) {
   var p = window.location.pathname;
-
   state.cache[p] = state.cache[p] || [];
   state.cache[p].push(obj);
-
-  return obj;
+  return obj.instance;
 };
 
 var add = function add(fn) {
@@ -30,7 +28,7 @@ var add = function add(fn) {
   });
 };
 
-var on = function on(selector, event, callback) {
+var on = function on(event, selector, callback) {
   return cache({
     selector: selector,
     event: event,
@@ -38,21 +36,17 @@ var on = function on(selector, event, callback) {
   });
 };
 
-var clear = function clear(path) {
-  var cache = state.cache[path] || [];
-
-  // console.log(`Clearing cache at path '${path}'`,cache)
-  cache.forEach(function (o, i) {
-    o.instance ? o.instance.destroy() : cache.splice(i, 1);
+var drop = function drop(path) {
+  state.cache[path].forEach(function (o) {
+    return o.instance.destroy ? o.instance.destroy() : null;
   });
-
-  cache = [];
+  delete state.cache[path];
 };
 
 exports.default = {
   on: on,
   add: add,
-  clear: clear,
+  drop: drop,
   getCache: function getCache() {
     return state.cache;
   }

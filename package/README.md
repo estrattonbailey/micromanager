@@ -213,4 +213,3 @@ Returns the entire instance cache.
 I first heard of this pattern from [ScottPolhemus](https://github.com/ScottPolhemus) while working at [Barrel](https://barrelny.com). It was further developed by [begodgrey](https://github.com/begodfrey), myself, and the rest of the team. Thanks y'all!
 
 **MIT License**
-

@@ -21,7 +21,7 @@ export function mount () {
 
       try {
         const instance = require(
-          'micromanager' + '/' + path + '/' + name + '.js'
+          'micromanagerRoot' + '/' + path + '/' + name + '.js'
         ).default(nodes[i])
 
         nodes[i].removeAttribute(attr)

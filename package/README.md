@@ -94,7 +94,7 @@ Micromanager uses an internal alias to your scripts directory. You can do this a
     ['module-resolver', {
       'root': ['.'],
       'alias': {
-        'micromanager': 'app' // or 'path/to/your/scripts'
+        'micromanagerRoot': 'app' // or 'path/to/your/scripts'
       }
     }]
   ]
@@ -106,7 +106,7 @@ modules.exports = {
   // ...
   resolve: {
     alias: {
-      micromanager: path.join(__dirname, 'app') // or 'path/to/your/scripts'
+      micromanagerRoot: path.join(__dirname, 'app') // or 'path/to/your/scripts'
     }
   },
   // ...
@@ -123,7 +123,7 @@ scripts.init({
   component: '/components' // with alias, 'app/components'
 })
 ```
-Each `key` provided to `init()` becomes the `data-<attribute>` you define in your markup. These keys can be anything you want. Their value simply needs to point to the directory where you keep these specific scripts. This path is then joined to the `micromanager` alias during compilation so that when compiled it becomes `./app/components/*.js`.
+Each `key` provided to `init()` becomes the `data-<attribute>` you define in your markup. These keys can be anything you want. Their value simply needs to point to the directory where you keep these specific scripts. This path is then joined to the `micromanagerRoot` alias during compilation so that when compiled it becomes `./app/components/*.js`.
 
 ### Mount modules
 Once configured, create modules scripts according to the configuration you passed to `init()`, define them in your markup using data attributes, and then mount all the scripts on each page load.

@@ -94,7 +94,7 @@ Micromanager uses an internal alias to your scripts directory. You can do this a
     ['module-resolver', {
       'root': ['.'],
       'alias': {
-        'micromanager': 'app' // or 'path/to/your/scripts'
+        'micromanagerRoot': 'app' // or 'path/to/your/scripts'
       }
     }]
   ]
@@ -106,7 +106,7 @@ modules.exports = {
   // ...
   resolve: {
     alias: {
-      micromanager: path.join(__dirname, 'app') // or 'path/to/your/scripts'
+      micromanagerRoot: path.join(__dirname, 'app') // or 'path/to/your/scripts'
     }
   },
   // ...

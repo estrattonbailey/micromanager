@@ -10,7 +10,7 @@ export function init (t) {
   types = t
 }
 
-export function mount () {
+export function mount ({micromanagerRoot = 'micromanagerRoot'}) {
   for (let type in types) {
     const attr = 'data-' + type
     const nodes = [].slice.call(document.querySelectorAll(`[${attr}]`))
@@ -21,7 +21,7 @@ export function mount () {
 
       try {
         const instance = require(
-          'micromanagerRoot' + '/' + path + '/' + name + '.js'
+          micromanagerRoot + '/' + path + '/' + name + '.js'
         ).default(nodes[i])
 
         nodes[i].removeAttribute(attr)

@@ -113,6 +113,14 @@ modules.exports = {
 }
 ```
 
+You can also just pass the relative path when mounting the scripts like so:
+
+```js
+scripts.mount({micromanagerRoot: './app'})
+```
+
+That way you don't have to setup the aliases on webpack/babel.
+
 ### Configure modules
 Micromanager needs to know how you structure your project, and also how you would like to call each script within your markup structure.
 ```javascript

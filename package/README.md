@@ -113,6 +113,14 @@ modules.exports = {
 }
 ```
 
+You can also just pass the relative path when mounting the scripts like so:
+
+```js
+scripts.mount({micromanagerRoot: './app'})
+```
+
+That way you don't have to setup the aliases on webpack/babel.
+
 ### Configure modules
 Micromanager needs to know how you structure your project, and also how you would like to call each script within your markup structure.
 ```javascript
@@ -123,7 +131,7 @@ scripts.init({
   component: '/components' // with alias, 'app/components'
 })
 ```
-Each `key` provided to `init()` becomes the `data-<attribute>` you define in your markup. These keys can be anything you want. Their value simply needs to point to the directory where you keep these specific scripts. This path is then joined to the `micromanagerRoot` alias during compilation so that when compiled it becomes `./app/components/*.js`.
+Each `key` provided to `init()` becomes the `data-<attribute>` you define in your markup. These keys can be anything you want. Their value simply needs to point to the directory where you keep these specific scripts. This path is then joined to the `micromanager` alias during compilation so that when compiled it becomes `./app/components/*.js`.
 
 ### Mount modules
 Once configured, create modules scripts according to the configuration you passed to `init()`, define them in your markup using data attributes, and then mount all the scripts on each page load.

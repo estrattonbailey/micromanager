@@ -1,3 +1,5 @@
+> ⚠️ this library is deprecated, please check out [picoapp](https://github.com/estrattonbailey/picoapp) as an alternative with a very similar API
+
 # micromanager
 A simple script initiation pattern for modular websites. **~650bytes gzipped.**
 
